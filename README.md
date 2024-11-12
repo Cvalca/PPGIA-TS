@@ -1,12 +1,20 @@
 # PPGIA - Teste de software 2a avaliação
 Projeto da disciplina de Teste de software do Programa de Pós Graduação em Informática Aplicada (PPGIA) na Universidade Federal Rural de Pernambuco (UFRPE)
-**Objetivo:** Avaliação prática da ferramenta Cypress para teste da plataforma [Arena Sport Club](https://www.arenasportclub.site/).
+**Objetivo:** Avaliação prática da ferramenta Cypress utilizando um exemplo de projeto conhecido pelo estudante, o [Arena Sport Club](https://www.arenasportclub.site/).
 
 **Entregáveis:**
-- [](Link para o documento de )
+- [https://docs.google.com/document/d/1H_TRI9qgewez0ir-1ol4siIA7NKLFesZ/edit?usp=sharing&ouid=101682983741799546791&rtpof=true&sd=true](Link para o documento de planejamento e relatório)
+- [https://www.canva.com/design/DAGWTmXkgHc/zyAPOIrV4jfIhn1O13-Hbg/view?utm_content=DAGWTmXkgHc&utm_campaign=designshare&utm_medium=link&utm_source=editor](Slides da apresentação)
+- [](Link para o documento de)
 
 # Caracterização da plataforma e da ferramenta de teste
-## Cypress
+## Cypress - Ferramenta de Teste
+O Cypress é uma ferramenta de automação de testes end-to-end (E2E) voltada principalmente para aplicações web. Ele permite que desenvolvedores e testadores escrevam, executem e visualizem testes que simulam a interação do usuário com uma aplicação, verificando a funcionalidade e o comportamento do sistema de ponta a ponta. Algumas vantagens do Cypress incluem sua facilidade de configuração e uso, execução em tempo real e interface gráfica, escrito em JavaScript e integração com Node.js, controle Completo do Ambiente de Teste, simula de maneira precisa a experiência real do usuário, realização de testes rápidos e eficientes.
+- Sua documentação pode ser facilmente encontrada no seguinte link: [Cypress DOCS](https://docs.cypress.io/app/get-started/why-cypress)
+
+## Arena Sport Club - Plataforma testada
+Trata-se de uma aplicação web para aqueles que desejam acompanhar diversos esportes simultaneamente, escolhida pela familiaridade do estudante com a plataforma, de sua intuitividade e disponibilidade Web.
+- Link da plataforma: [Arena Sport Club](https://www.arenasportclub.site)
 
 # Tutorial de instalação e configuração no windows 11
 ## 1 Pré-requisitos (De acordo com a [documentação oficial](https://docs.cypress.io/app/get-started/install-cypress#System-requirements)
