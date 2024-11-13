@@ -3,9 +3,9 @@ Projeto da disciplina de Teste de software do Programa de Pós Graduação em In
 **Objetivo:** Avaliação prática da ferramenta Cypress utilizando um exemplo de projeto conhecido pelo estudante, o [Arena Sport Club](https://www.arenasportclub.site/).
 
 **Entregáveis:**
-- [https://docs.google.com/document/d/1H_TRI9qgewez0ir-1ol4siIA7NKLFesZ/edit?usp=sharing&ouid=101682983741799546791&rtpof=true&sd=true](Link para o documento de planejamento e relatório).
-- [https://www.canva.com/design/DAGWTmXkgHc/zyAPOIrV4jfIhn1O13-Hbg/view?utm_content=DAGWTmXkgHc&utm_campaign=designshare&utm_medium=link&utm_source=editor](Slides da apresentação).
-- [](Link para o documento de).
+- [Link para o documento de planejamento e relatório](https://docs.google.com/document/d/1H_TRI9qgewez0ir-1ol4siIA7NKLFesZ/edit?usp=sharing&ouid=101682983741799546791&rtpof=true&sd=true).
+- [Slides da apresentação](https://www.canva.com/design/DAGWTmXkgHc/zyAPOIrV4jfIhn1O13-Hbg/view?utm_content=DAGWTmXkgHc&utm_campaign=designshare&utm_medium=link&utm_source=editor).
+- [Link para o documento de]().
 
 # Caracterização da plataforma e da ferramenta de teste
 ## Cypress - Ferramenta de Teste
