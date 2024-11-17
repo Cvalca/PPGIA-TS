@@ -43,10 +43,8 @@ describe('2 Visualizar campeonatos e jogos', () => {
   it('2.a Favoritar campeonatos pela barra lateral', () => {
 
     cy.get('.match-header').click();
-    cy.get('[href="/campeonato/1123"] > .list-group > #list-group-sidebar > .justify-content-md-center > .col-sidebar-left > #button-favorite-sidebar')
-      .click();
-      cy.get('#container-side-bar > :nth-child(1) > #title-text-side-bar .list-group-item').last() 
-      .should('contain.text', 'Campeonato Brasileiro'); 
+    cy.get('[href="/campeonato/1123"] > .list-group > #list-group-sidebar > .justify-content-md-center > .col-sidebar-left > #button-favorite-sidebar').click();
+    cy.get(':nth-child(2) > .list-group > #list-group-sidebar > .justify-content-md-center > #name-camp-sidebar').should('contain.text', 'Campeonato Brasileiro'); 
   });
 
   it('2.b Visualizar detalhes de campeonato pela barra lateral', () => {
