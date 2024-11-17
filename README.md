@@ -5,7 +5,7 @@ Projeto da disciplina de Teste de software do Programa de Pós Graduação em In
 **Entregáveis:**
 - [Link para o documento de planejamento e relatório](https://docs.google.com/document/d/1H_TRI9qgewez0ir-1ol4siIA7NKLFesZ/edit?usp=sharing&ouid=101682983741799546791&rtpof=true&sd=true).
 - [Slides da apresentação](https://www.canva.com/design/DAGWTmXkgHc/zyAPOIrV4jfIhn1O13-Hbg/view?utm_content=DAGWTmXkgHc&utm_campaign=designshare&utm_medium=link&utm_source=editor).
-- [Link para o documento de]().
+- [Link para o documento de Plano de teste](https://docs.google.com/document/d/1CdMcSdXWWdFglLvoMA-9_hOMdk2Oo-5k/edit?usp=sharing&ouid=101682983741799546791&rtpof=true&sd=true).
 
 # Caracterização da plataforma e da ferramenta de teste
 ## Cypress - Ferramenta de Teste
@@ -40,13 +40,15 @@ O Cypress requer Node.js para instalar. Oferecemos suporte às versões listadas
 - Memória: mínimo de 4 GB, 8 GB+ para execuções de teste mais longas
 
 ## 2 Instalação e execução
+No path do seu projeto, abra um terminal (pode ser feito no terminal do visual studio também).
 - Para instalar, utilizar o comando ```npm install cypress --save-dev```
-- Para executar, utilizar o comando ```npx cypress open```
+- Para executar localmente, basta utilizar o comando ```npx cypress open```
   - (Windows) Na primeira vez, será necessário fornecer permissões para uso.
+- Para visualizar resultados anteriores, é preciso associar a um projeto do cypress cloud. Para isso, clique em runs e copie o código para rodar no terminal, então os resultados poderão ser vistos na plataforma web do cypress junto a vários dados para serem analisados.
 
-### 2.A Configurando o projeto
+### 2.A Configurando o projeto no primeiro uso
 - Rodar o cypress pela primeira vez;
 - Selecionar o tipo de teste a se realizar: "E2E Testing";  
   - Essa opção foi escolhida, pois o sistema a ser testado está disposto em uma plataforma web.
-
+  - Selecione o navegador e clique em rodar.
 
