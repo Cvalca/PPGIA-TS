@@ -17,7 +17,7 @@ Trata-se de uma aplicação web para aqueles que desejam acompanhar diversos esp
 - Link da plataforma: [Arena Sport Club](https://www.arenasportclub.site)
 
 # Tutorial de instalação e configuração no windows 11
-## 1 Pré-requisitos (De acordo com a [documentação oficial](https://docs.cypress.io/app/get-started/install-cypress#System-requirements)
+## 1 Pré-requisitos (De acordo com a [documentação oficial](https://docs.cypress.io/app/get-started/install-cypress#System-requirements))
 ### 1.A Sistema Operacional
 - macOS 10.15 e superior (Intel ou Apple Silicon 64 bits (x64 ou arm64)).
 - Linux Ubuntu 20.04 e superior, Fedora 39 e superior e Debian 11 e superior (x64 ou arm64) (veja os pré-requisitos do Linux abaixo).
@@ -52,3 +52,7 @@ No path do seu projeto, abra um terminal (pode ser feito no terminal do visual s
   - Essa opção foi escolhida, pois o sistema a ser testado está disposto em uma plataforma web.
   - Selecione o navegador e clique em rodar.
 
+### 2.B Gravação das rodagens no cloud
+- Para gravar os resultados na cloud, deve ser rodado no terminal o seguinte comando:
+```npx cypress run --record --key [sua_chave_aqui]```
+Onde a chave do seu projeto deve ser colocada, para que seja gravado.

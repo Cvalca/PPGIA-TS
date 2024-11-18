@@ -41,7 +41,6 @@ describe('2 Visualizar campeonatos e jogos', () => {
   })
 
   it('2.a Favoritar campeonatos pela barra lateral', () => {
-
     cy.get('.match-header').click();
     cy.get('[href="/campeonato/1123"] > .list-group > #list-group-sidebar > .justify-content-md-center > .col-sidebar-left > #button-favorite-sidebar').click();
     cy.get(':nth-child(2) > .list-group > #list-group-sidebar > .justify-content-md-center > #name-camp-sidebar').should('contain.text', 'Campeonato Brasileiro'); 
@@ -59,9 +58,10 @@ describe('2 Visualizar campeonatos e jogos', () => {
     cy.url().should('include', '/campeonato/1123')
   })
 
+  //estático
   it('2.d Visualizar detalhes de jogo da aba resultados (Geral)', () => {
-    cy.get('[href="/partida/27026"] > .match').click()
-    cy.url().should('include', '/partida/27026')
+    cy.get('[href="/partida/28262"] > .match').click()
+    cy.url().should('include', '/partida/28262')
   })
 })
 
@@ -73,8 +73,9 @@ describe('3 Visualizar equipes', () => {
   it('3.a Pesquisar e Favoritar equipes na barra lateral', () => {
     cy.get('#button-favorite-sidebar > #title-text-side-bar').click()
     cy.get('#form-sidebar > .form-control').type('sport{enter}')
+    cy.wait(5000)
     cy.get(':nth-child(1) > .justify-content-center-search > .col-md-1 > #button-favorite-sidebar').click()
-    cy.get('[href="/equipe/1284"] > .list-group > #list-group-sidebar > .justify-content-md-center').should('be.visible')
+    cy.get('[href="/equipe/1284"] > .list-group > #list-group-sidebar').should('be.visible')
   })
 
   it('3.b Pesquisar e Visualizar detalhes de equipe', () => {
@@ -113,8 +114,9 @@ describe('5 Realizar previsão de partida', () => {
     cy.get('.error-login').should('have.text', 'Selecione uma partida antes de realizar a previsão!')
   })
 
+   //estático
   it('5.b Realizar previsão de partida', () => {
-    cy.get('[href="/partida/27031"] > .match').click()
+    cy.get('[href="/partida/28262"] > .match').click()
     cy.get('.link-results > #button-match').click()
     cy.get(':nth-child(3) > .btn').click()
     cy.get('#root > :nth-child(4) > :nth-child(2)').should('be.visible')
