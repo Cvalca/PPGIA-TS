@@ -32,3 +32,23 @@ Cypress.Commands.add('login', (email, password) => {
     cy.get('#formBasicPassword').type(password)
     cy.get('.btn-success').click()
   })
+
+  Cypress.Commands.add('logout', () => {
+    cy.get('.nav-item').click()
+    cy.get('.dropdown-item').click()
+  })
+  
+  Cypress.Commands.add('favoriteSidebarItem', (itemSelector) => {
+    cy.get(itemSelector).click()
+  })
+  
+  Cypress.Commands.add('searchAndSelect', (searchTerm, resultSelector) => {
+    cy.get('.search-header').type(`${searchTerm}{enter}`)
+    cy.wait(3000)
+    cy.get(resultSelector).click()
+  })
+  
+  Cypress.Commands.add('navigateAndVerifyUrl', (selector, expectedUrl) => {
+    cy.get(selector).click()
+    cy.url().should('include', expectedUrl)
+  })

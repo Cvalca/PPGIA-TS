@@ -25,8 +25,7 @@ describe('1 Login e Logout na plataforma', () => {
 
   it('1.e Logout', () => {
     cy.login('joao@teste.com', '12345678')
-    cy.get('.nav-item').click()
-    cy.get('.dropdown-item').click()
+    cy.logout()
     cy.get('.nav-item').click()
     cy.get('.dropdown-menu').within(() => {
       cy.contains('Entrar').should('be.visible')
@@ -41,27 +40,24 @@ describe('2 Visualizar campeonatos e jogos', () => {
   })
 
   it('2.a Favoritar campeonatos pela barra lateral', () => {
-    cy.get('.match-header').click();
-    cy.get('[href="/campeonato/1123"] > .list-group > #list-group-sidebar > .justify-content-md-center > .col-sidebar-left > #button-favorite-sidebar').click();
-    cy.get(':nth-child(2) > .list-group > #list-group-sidebar > .justify-content-md-center > #name-camp-sidebar').should('contain.text', 'Campeonato Brasileiro'); 
-  });
+    cy.get('.match-header').click()
+    cy.favoriteSidebarItem('[href="/campeonato/1123"] > .list-group > #list-group-sidebar > .justify-content-md-center > .col-sidebar-left > #button-favorite-sidebar')
+    cy.get(':nth-child(2) > .list-group > #list-group-sidebar > .justify-content-md-center > #name-camp-sidebar').should('contain.text', 'Campeonato Brasileiro')
+  })
 
   it('2.b Visualizar detalhes de campeonato pela barra lateral', () => {
-    cy.get('.match-header').click();
-    cy.get(':nth-child(4) > .list-group > #list-group-sidebar > .justify-content-md-center > #name-camp-sidebar > span').click()
-    cy.url().should('include', '/campeonato')
+    cy.get('.match-header').click()
+    cy.navigateAndVerifyUrl(':nth-child(4) > .list-group > #list-group-sidebar > .justify-content-md-center > #name-camp-sidebar > span', '/campeonato')
   })
 
   it('2.c Pesquisar e visualizar detalhes de campeonatos válidos', () => {
-    cy.get('.search-header').type('Campeonato Brasileiro{enter}')
-    cy.get('[href="/campeonato/1123"] > .justify-content-center-search > .col-search > .row > .name-search').click()
+    cy.searchAndSelect('Campeonato Brasileiro', '[href="/campeonato/1123"] > .justify-content-center-search > .col-search > .row > .name-search')
     cy.url().should('include', '/campeonato/1123')
   })
 
   //estático
   it('2.d Visualizar detalhes de jogo da aba resultados (Geral)', () => {
-    cy.get('[href="/partida/28262"] > .match').click()
-    cy.url().should('include', '/partida/28262')
+    cy.navigateAndVerifyUrl('[href="/partida/27910"] > .match', '/partida/27910')
   })
 })
 
@@ -79,15 +75,15 @@ describe('3 Visualizar equipes', () => {
   })
 
   it('3.b Pesquisar e Visualizar detalhes de equipe', () => {
-    cy.get('.search-header').type('sport{enter}')
-    cy.get('[href="/equipe/1284"] > .justify-content-center-search > .col-search > :nth-child(1) > .name-search').click()
+    cy.searchAndSelect('sport', '[href="/equipe/1284"] > .justify-content-center-search > .col-search > :nth-child(1) > .name-search')
     cy.url().should('include', '/equipe/1284')
   })
 
+  //estático
   it('3.c Ver equipes a partir de um campeonato', () => {
-    cy.get('.match-header').click();
+    cy.get('.match-header').click()
     cy.get(':nth-child(4) > .list-group > #list-group-sidebar > .justify-content-md-center > #name-camp-sidebar > span').click()
-    cy.get(':nth-child(1) > .link-results > .match').click()
+    cy.get('[href="/partida/27406"] > .match').click()
     cy.get(':nth-child(4) > .link-team-match > .teams-name').click()
     cy.url().should('include', '/equipe')
   })
@@ -95,11 +91,13 @@ describe('3 Visualizar equipes', () => {
 
 describe('4 Visualizar notícias', () => {
   it('4.a Visualizar notícias', () => {
-    cy.get('[href="/noticias"] > .nav-img').click()
-    cy.get(':nth-child(1) > :nth-child(2) > .link2-news > .title-news').invoke('attr', 'href').then((href) => {
-      cy.get(':nth-child(1) > :nth-child(2) > .link2-news > .title-news').click() 
+    cy.navigateAndVerifyUrl('[href="/noticias"]', '/noticias')
+    cy.get(':nth-child(1) > :nth-child(2) > .link2-news > .title-news')
+      .invoke('attr', 'href')
+      .then((href) => {
+        cy.get(':nth-child(1) > :nth-child(2) > .link2-news > .title-news').click()
         cy.url().should('eq', `${Cypress.config('baseUrl')}${href}`)
-    })
+      })
   })
 })
 
@@ -109,14 +107,14 @@ describe('5 Realizar previsão de partida', () => {
   })
 
   it('5.a Realizar previsão de partida sem partida selecionada', () => {
-    cy.get('[href="/previsoes"]').click()
+    cy.navigateAndVerifyUrl('[href="/previsoes"]', '/previsoes')
     cy.get(':nth-child(3) > .btn').click()
     cy.get('.error-login').should('have.text', 'Selecione uma partida antes de realizar a previsão!')
   })
 
    //estático
   it('5.b Realizar previsão de partida', () => {
-    cy.get('[href="/partida/28262"] > .match').click()
+    cy.navigateAndVerifyUrl('[href="/partida/27910"] > .match', '/partida/27910')
     cy.get('.link-results > #button-match').click()
     cy.get(':nth-child(3) > .btn').click()
     cy.get('#root > :nth-child(4) > :nth-child(2)').should('be.visible')
